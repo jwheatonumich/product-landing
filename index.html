@@ -1,5 +1,44 @@
 <style>
 
+    body{
+        align-content:center;
+    }
+
+    header{
+        display:flex;
+        flex-direction:row;
+        align-content:center;
+        height: 100px;
+    }
+
+    #header-div{
+        display: inline-block;
+    }
+
+    #header-img{
+        max-width: 100%;
+        max-height: 100%;
+        display: inline-block;
+    }
+
+    nav ul {
+        margin: 0px;
+        padding: 5px 0px 5px 10px;
+    }
+
+    /*display navigation list items in one line rather than on separate lines*/
+    nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    #request{
+        align-content:center;
+        width: 50%;
+        background-color: #ddd;
+        margin: auto;
+    }
+
     #product {
         padding:10px;
     }
@@ -22,16 +61,18 @@
     <header id="header">
         <img id="header-img" src="https://www.logomyway.com/marketPlace/inharmony_23305/sample_company.jpg">
         
-        <h1>Web Design Services</h1>
+        <div id="header-div">
+            <h1>Web Design Services</h1>
 
-        <nav id="nav-bar">
-            <ul>
-                <li><a id="nav-link" href="#request" class=header-links>Request Info</a></li>
-                <li><a id="nav-link" href="#products" class=header-links>Products and Services</a></li>
-                <li><a id="nav-link" href="#features" class=header-links>Features</a></li>
-                <li><a id="nav-link" href="#about" class=header-links>About Us</a></li>
-            </ul>
-          </nav>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a id="nav-link" href="#request" class=header-links>Request Info</a></li>
+                    <li><a id="nav-link" href="#product" class=header-links>Products and Services</a></li>
+                    <li><a id="nav-link" href="#features" class=header-links>Features</a></li>
+                    <li><a id="nav-link" href="#about" class=header-links>About Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="request">
