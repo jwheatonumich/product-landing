@@ -3,6 +3,7 @@ To do list:
 -Add icons and text in a flexbox for features section
 -Setup features and products section to go to one line if viewport gets too small
 -Add "anchors" to each section that are 50px above the section start so that the internal links go to the right place
+-Figure out how to deal with the header when the page gets too small
 -->
 
 <style>
@@ -44,6 +45,24 @@ To do list:
         margin-top:10px;
     }
 
+    #features{
+        display:flex;
+        flex-direction: column;
+        align-content:center;
+        align-items:center;
+    }
+
+    .feature-div{
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+    }
+
+    .feature-img{
+        width: 75px;
+        height: auto;
+    }
+
     #form{
         display: flex;
         flex-direction: column;
@@ -71,7 +90,7 @@ To do list:
         background-color: #ddd;
         padding: 10px;
         margin: 0px;
-        margin-top:-10px; /*Makes the header start at the top of the page*/
+        top:0; /*Makes the header start at the top of the page*/
         position: fixed;
         border: rgb(155, 155, 155) solid 1px;
     }
@@ -83,11 +102,23 @@ To do list:
 
     li a{
         text-decoration:none;
+        padding: 25px 30px;
+    }
+
+    @media (max-width: 1000px) {
+        li a{
+            font-size: 12px;
+            padding: 5px 5px;
+        }
+
+        #header-img{
+            max-width: 75%;
+            max-height: 75%;
+        }
     }
 
     li a:link, a:visited 
     {
-        padding: 25px 30px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -140,17 +171,22 @@ To do list:
         max-width: 1000px;
     }
 
+    /*Change the product dividers to a column if the screen is small*/
+    @media (max-width: 750px){
+
+    }
+
     #product-div > .level {
         background-color: #ddd;
         padding: 15px;
         width: 100%;
         margin: 10px;
         box-shadow: 5px 5px 5px;
-
         /*Center items horizontally*/
         display:flex;
         flex-direction:column;
         align-items:center;
+        min-width: 200px;
     }
 
     #product-div > .level:hover {
@@ -165,7 +201,8 @@ To do list:
     #request{
         display:flex;
         flex-direction: column;
-        align-content:center;   
+        align-content:center;  
+        background:#ddd;
     }
 
     #request-div{
@@ -185,6 +222,7 @@ To do list:
         background-color:#ddd;
         font-weight: bold;
         margin-top: -25px;
+        padding: 5px;
     }
 
     #submit:hover {
@@ -207,20 +245,15 @@ To do list:
 
             <nav id="nav-bar">
                 <ul>
-                    <li><a id="nav-link" href="#features" class=header-links>Features</a></li>
-                    <li><a id="nav-link" href="#product" class=header-links>Products and Services</a></li>
-                    <li><a id="nav-link" href="#request" class=header-links>Request Information</a></li>
-                    <li><a id="nav-link" href="#about" class=header-links>About Us</a></li>
+                    <li><a class="nav-link" href="#features" class=header-links>Features</a></li>
+                    <li><a class="nav-link" href="#product" class=header-links>Products and Services</a></li>
+                    <li><a class="nav-link" href="#request" class=header-links>Request Information</a></li>
+                    <li><a class="nav-link" href="#about" class=header-links>About Us</a></li>
                 </ul>
             </nav>
     </header>
 
     <div id="body-div">
-
-        <section id="features">
-            <h2>Features of Our Websites</h2>
-            <p>Information about features.</p>
-        </section>
 
         <section id="product">
             <h2>Products and Services</h2>
@@ -256,11 +289,41 @@ To do list:
             <h2>Request Information About Our Servies</h2>
             <div id="request-div">
                 <form id="form" action="https://www.freecodecamp.com/email-submit">
-                    <input id="email" type="email" placeholder="Enter your email address"><br><br>
-                    <button id="submit" type="submit">Request Information</button>
+                    <input id="email" name="email" type="email" placeholder="Enter your email address"><br><br>
+                    <input id="submit" type="submit" value="Request Information">
                 </form>
             </div>
         </section>
+
+        <section id="features">
+            <h2>Features of Our Websites</h2>
+
+            <div class="feature-div">
+                <img class="feature-img" src="https://static.thenounproject.com/png/1667310-200.png">
+                <div>
+                    <h3>Mobile and Desktop Compatible</h3>
+                    <p>Information about features.</p>
+                </div>
+            </div>
+
+            <div class="feature-div">
+                <img class="feature-img" src="https://static.thenounproject.com/png/232480-200.png">
+                <div>
+                    <h3>Search Optimized</h3>
+                    <p>Information about features.</p>
+                </div>
+            </div>
+
+            <div class="feature-div">
+                <img class="feature-img" src="https://static.thenounproject.com/png/21297-200.png">
+                <div>
+                    <h3>Coded by Professionals</h3>
+                    <p>Information about features.</p>
+                </div>
+            </div>
+
+        </section>
+
 
 
         <section id="about">
