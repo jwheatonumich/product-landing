@@ -1,42 +1,117 @@
 <style>
 
+    /*Reset all of the built-in margin and padding so I can handle it manually*/
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+    #about {
+        padding:10px;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
     body{
         align-content:center;
     }
 
-    header{
-        display:flex;
-        flex-direction:row;
-        align-content:center;
-        height: 100px;
+    #body-div{
+        /*The header position is fixed so it sits outside of the normal flow of content. This adds space for the header at the top of the page*/
+        padding-top:50px;
     }
 
-    #header-div{
-        display: inline-block;
+    button{
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    div{
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #form{
+        display: flex;
+        flex-direction: column;
+        align-items: center; /*Stop contents from stretching across the flexbox*/
+        padding: 5px;
+    }
+
+    h1{
+        font-size: 16;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    header{
+        /*Center everything vertically in a flexbox*/
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        height: 50px;
+        width: 100%;
+        background-color: #ddd;
+        padding: 10px;
+        margin: 0px;
+        margin-top:-10px; /*Makes the header start at the top of the page*/
+        position: fixed;
+        border: rgb(155, 155, 155) solid 1px;
     }
 
     #header-img{
         max-width: 100%;
         max-height: 100%;
+    }
+
+    li a{
+        text-decoration:none;
+    }
+
+    li a:link, a:visited 
+    {
+        padding: 25px 30px;
+        text-align: center;
+        text-decoration: none;
         display: inline-block;
+        color:black;
+    }
+
+    li a:hover, a:active 
+    {
+        background-color: rgba(162, 173, 211, 0.603);
+        color:white;
+    }
+
+    nav{
+        display:flex;
+        flex-direction:row;
     }
 
     nav ul {
-        margin: 0px;
-        padding: 5px 0px 5px 10px;
+        list-style-type:none; /*Remove bullets from the nav list*/
+
     }
 
     /*display navigation list items in one line rather than on separate lines*/
     nav li {
         display: inline;
-        margin-right: 20px;
+        margin-right: 5px;
+        padding: 10px 5px 10px 5px;
     }
 
-    #request{
-        align-content:center;
-        width: 50%;
-        background-color: #ddd;
-        margin: auto;
+    p{
+        padding: 5px;
+        text-align: center;
+    }
+
+    .price{
+        font-size: 24px;
     }
 
     #product {
@@ -53,77 +128,137 @@
         background-color: #ddd;
         padding: 15px;
         width: 100%;
+        margin: 10px;
+
+        /*Center items horizontally*/
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    #product-div > .level:hover {
+        background-color: rgba(162, 173, 211, 0.603);
+        color: white;
+    }
+
+    #product-div > h3 {
+        display: inline;
+    }
+
+    #request{
+        display:flex;
+        flex-direction: column;
+        align-content:center;   
+    }
+
+    #request-div{
+        display:flex;
+        flex-direction: column;
+        align-content:center;
+        margin: 0px; /*Override the standard div margin to line-up the content with the header*/
+        padding:0px; /*Override the standard div padding to get a better spacign with the above header*/
+    }
+
+    section{
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #submit{
+        background-color:#ddd;
+        font-weight: bold;
+        margin-top: -25px;
+    }
+
+    #submit:hover {
+        background-color:rgb(170, 170, 170);
+    }
+
+    #video{
+        height:315px;
+        width:600px;
     }
 
 </style>
 
 <body>
+
     <header id="header">
-        <img id="header-img" src="https://www.logomyway.com/marketPlace/inharmony_23305/sample_company.jpg">
+        <img id="header-img" src="https://i.pinimg.com/originals/f1/71/e7/f171e7493b6e76ea9bb0ddbaa3843a59.png">
         
-        <div id="header-div">
             <h1>Web Design Services</h1>
 
             <nav id="nav-bar">
                 <ul>
-                    <li><a id="nav-link" href="#request" class=header-links>Request Info</a></li>
-                    <li><a id="nav-link" href="#product" class=header-links>Products and Services</a></li>
                     <li><a id="nav-link" href="#features" class=header-links>Features</a></li>
+                    <li><a id="nav-link" href="#product" class=header-links>Products and Services</a></li>
+                    <li><a id="nav-link" href="#request" class=header-links>Request Information</a></li>
                     <li><a id="nav-link" href="#about" class=header-links>About Us</a></li>
                 </ul>
             </nav>
-        </div>
     </header>
 
-    <section id="request">
-        <h2>Request Information</h2>
-        <form id="form" action="https://www.freecodecamp.com/email-submit">
-            <input id="email" type="email" placeholder="Enter Email">
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+    <div id="body-div">
 
-    <section id="product">
-        <h2>Products and Services</h2>
-
-        <div id="product-div">
-            <div class="level" id="product1">
-                <h3>Product 1</h3>
-                <img id="product1-img" src="">
-                <p>Information about Product 1.</p>
-            </div>
-
-            <div class="level" id="product2">
-                <h3>Product 2</h3>
-                <img id="product2-img" src="">
-                <p>Information about Product 2.</p>
-            </div>
-
-            <div class="level" id="product3">
-                <h3>Product 3</h3>
-                <img id="product3-img" src="">
-                <p>Information about Product 3.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="features">
-        <h2>Features of Our Websites</h2>
-        <p>Information about features.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Information about us.</p>
-        <video id="video" width="320" height="240" controls>
-            <source src="movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-          Your browser does not support the video tag.
-          </video>
+        <section id="features">
+            <h2>Features of Our Websites</h2>
+            <p>Information about features.</p>
         </section>
 
-    <footer>
+        <section id="product">
+            <h2>Products and Services</h2>
 
+            <div id="product-div">
+                <div class="level" id="product1">
+                    <h3>Startup Website</h3>
+                    <p class="price">$150.00</p>
+                    <p>3 Page Website</p>
+                    <p>Choose from multiple website templates</p>
+                    <p>Customized content based on your requirements</p>
+                </div>
+
+                <div class="level" id="product2">
+                    <h3>Professional Website</h3>
+                    <p class="price">$799.99</p>
+                    <p>10 Page Website</p>
+                    <p>Bespoke hand coded HTML and CSS</p>
+                    <p>Custom content and banners</p>
+                </div>
+
+                <div class="level" id="product3">
+                    <h3>Elite Website</h3>
+                    <p class="price">$1399.99</p>
+                    <p>15 Page Website</p>
+                    <p>Bespoke hand coded HTML, CSS, and Javascript</p>
+                    <p>Customized content, banners, and interactive content</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="request">
+            <h2>Request Information About Our Servies</h2>
+            <div id="request-div">
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input id="email" type="email" placeholder="Enter your email address"><br><br>
+                    <button id="submit" type="submit">Request Information</button>
+                </form>
+            </div>
+        </section>
+
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about our web design process below.</p>
+            <iframe id="video" controls src="https://www.youtube-nocookie.com/embed/f7DcY8CY6TY?rel=0&amp;controls=0&amp;showinfo=0">
+            </iframe>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>
+            Created by James Heaton
+        </p>
     </footer>
 
 </body>
