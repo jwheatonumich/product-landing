@@ -1,3 +1,10 @@
+<!--
+To do list:
+-Add icons and text in a flexbox for features section
+-Setup features and products section to go to one line if viewport gets too small
+-Add "anchors" to each section that are 50px above the section start so that the internal links go to the right place
+-->
+
 <style>
 
     /*Reset all of the built-in margin and padding so I can handle it manually*/
@@ -30,6 +37,11 @@
     div{
         padding: 10px;
         margin: 10px;
+    }
+
+    #email {
+        text-align:center; /*Center placeholder text*/
+        margin-top:10px;
     }
 
     #form{
@@ -116,12 +128,16 @@
 
     #product {
         padding:10px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
     }
 
     #product-div {
         padding:10px;
         display: flex;
         flex-direction: row;
+        max-width: 1000px;
     }
 
     #product-div > .level {
@@ -129,6 +145,7 @@
         padding: 15px;
         width: 100%;
         margin: 10px;
+        box-shadow: 5px 5px 5px;
 
         /*Center items horizontally*/
         display:flex;
