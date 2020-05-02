@@ -35,6 +35,13 @@ To do list:
         padding-top:50px;
     }
 
+    /*Increase padding when screen is small because header gets bigger*/
+    @media (max-width:650px){
+        #body-div{
+            padding-top:100px;
+        }
+    }
+
     button{
         padding: 5px;
         margin-top: 5px;
@@ -104,27 +111,37 @@ To do list:
         border: rgb(155, 155, 155) solid 1px;
     }
 
-    #header-img{
-        max-width: 100%;
-        max-height: 100%;
+    /*Make the header switch to vertical alignment for small screens */
+    @media (max-width: 650px){
+        header{
+            flex-direction:row;
+            height: auto;
+        }
     }
+
+    #header-img{
+        width: 50px;
+        height:50px;
+    }
+
 
     li a{
         text-decoration:none;
         padding: 25px 30px;
     }
 
-    @media (max-width: 1000px) {
+    /*Make the links take less space on a small screen*/
+    @media(max-width: 650px){
         li a{
-            font-size: 12px;
-            padding: 5px 5px;
+            padding: 0;
+            width:100%
         }
+    }
 
         #header-img{
             max-width: 75%;
             max-height: 75%;
         }
-    }
 
     li a:link, a:visited 
     {
@@ -138,6 +155,11 @@ To do list:
     {
         background-color: rgb(170, 170, 170);
         color:white;
+    }
+
+    #logo{
+        display:flex;
+        flex-direction:row;
     }
 
     nav{
@@ -155,6 +177,14 @@ To do list:
         display: inline;
         margin-right: 5px;
         padding: 10px 5px 10px 5px;
+    }
+
+    @media (max-width:650px){
+        nav li {
+            width:100%;
+            display:flex;
+            padding:0;
+        }
     }
 
     p{
@@ -183,7 +213,7 @@ To do list:
     /*Change the product dividers to a column if the screen is small*/
     @media (max-width: 750px){
         #product-div{
-            flex-direction: column;
+            flex-wrap:wrap;
         }
     }
 
@@ -250,9 +280,11 @@ To do list:
 <body>
 
     <header id="header">
-        <img id="header-img" src="https://i.pinimg.com/originals/f1/71/e7/f171e7493b6e76ea9bb0ddbaa3843a59.png">
+        <div id="logo">
+            <img id="header-img" src="https://i.pinimg.com/originals/f1/71/e7/f171e7493b6e76ea9bb0ddbaa3843a59.png">
         
             <h1>Web Design Services</h1>
+        </div>
 
             <nav id="nav-bar">
                 <ul>
