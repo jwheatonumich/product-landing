@@ -1,7 +1,5 @@
 <!--
 To do list:
--Add icons and text in a flexbox for features section
--Setup features and products section to go to one line if viewport gets too small
 -Add "anchors" to each section that are 50px above the section start so that the internal links go to the right place
 -Figure out how to deal with the header when the page gets too small
 -->
@@ -19,6 +17,13 @@ To do list:
         display: flex;
         flex-direction: column;
         align-items:center;
+    }
+
+
+    .align-left{
+        padding:0px;
+        text-align:left;
+
     }
 
     body{
@@ -61,6 +66,10 @@ To do list:
     .feature-img{
         width: 75px;
         height: auto;
+    }
+
+    .feature-text-div{
+        display:inline-block;
     }
 
     #form{
@@ -127,7 +136,7 @@ To do list:
 
     li a:hover, a:active 
     {
-        background-color: rgba(162, 173, 211, 0.603);
+        background-color: rgb(170, 170, 170);
         color:white;
     }
 
@@ -173,7 +182,9 @@ To do list:
 
     /*Change the product dividers to a column if the screen is small*/
     @media (max-width: 750px){
-
+        #product-div{
+            flex-direction: column;
+        }
     }
 
     #product-div > .level {
@@ -190,7 +201,7 @@ To do list:
     }
 
     #product-div > .level:hover {
-        background-color: rgba(162, 173, 211, 0.603);
+        background-color: rgb(170, 170, 170);
         color: white;
     }
 
@@ -297,38 +308,41 @@ To do list:
 
         <section id="features">
             <h2>Features of Our Websites</h2>
+            <div class="features-outer-div">
+                <div class="feature-div">
+                    <img class="feature-img" src="https://static.thenounproject.com/png/1667310-200.png">
+                    <div class="feature-text-div">
+                        <h3 class="align-left">Mobile and Desktop Compatible</h3>
+                        <p class="align-left">Websites that are accessible from phones, tablets, computers, and more.</p>
+                    </div>
+                </div>
 
-            <div class="feature-div">
-                <img class="feature-img" src="https://static.thenounproject.com/png/1667310-200.png">
-                <div>
-                    <h3>Mobile and Desktop Compatible</h3>
-                    <p>Information about features.</p>
+                <div class="feature-div">
+                    <img class="feature-img" src="https://static.thenounproject.com/png/232480-200.png">
+                    <div class="feature-text-div">
+                        <h3 class="align-left">Search Optimized</h3>
+                        <p class="align-left">Built to deliver quality web traffic organically.</p>
+                    </div>
+                </div>
+
+                <div class="feature-div">
+                    <img class="feature-img" src="https://static.thenounproject.com/png/21297-200.png">
+                    <div class="feature-text-div">
+                        <h3 class="align-left">Coded by Professionals</h3>
+                        <p class="align-left">Designed by a team of experienced professionals who place your needs first.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="feature-div">
-                <img class="feature-img" src="https://static.thenounproject.com/png/232480-200.png">
-                <div>
-                    <h3>Search Optimized</h3>
-                    <p>Information about features.</p>
-                </div>
-            </div>
-
-            <div class="feature-div">
-                <img class="feature-img" src="https://static.thenounproject.com/png/21297-200.png">
-                <div>
-                    <h3>Coded by Professionals</h3>
-                    <p>Information about features.</p>
-                </div>
-            </div>
-
+        </section>
         </section>
 
 
 
         <section id="about">
             <h2>About Us</h2>
+            <br>
             <p>Learn more about our web design process below.</p>
+            <br>
             <iframe id="video" controls src="https://www.youtube-nocookie.com/embed/f7DcY8CY6TY?rel=0&amp;controls=0&amp;showinfo=0">
             </iframe>
         </section>
