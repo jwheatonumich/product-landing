@@ -1,7 +1,6 @@
 <!--
 To do list:
 -Add "anchors" to each section that are 50px above the section start so that the internal links go to the right place
--Figure out how to deal with the header when the page gets too small
 -->
 
 <style>
@@ -36,7 +35,7 @@ To do list:
     }
 
     /*Increase padding when screen is small because header gets bigger*/
-    @media (max-width:650px){
+    @media (max-width:1000px){
         #body-div{
             padding-top:100px;
         }
@@ -112,10 +111,11 @@ To do list:
     }
 
     /*Make the header switch to vertical alignment for small screens */
-    @media (max-width: 650px){
+    @media (max-width: 1000px){
         header{
             flex-direction:row;
             height: auto;
+            justify-content:space-around;
         }
     }
 
@@ -131,7 +131,7 @@ To do list:
     }
 
     /*Make the links take less space on a small screen*/
-    @media(max-width: 650px){
+    @media(max-width: 1000px){
         li a{
             padding: 0;
             width:100%
@@ -179,7 +179,7 @@ To do list:
         padding: 10px 5px 10px 5px;
     }
 
-    @media (max-width:650px){
+    @media (max-width:1000px){
         nav li {
             width:100%;
             display:flex;
@@ -207,13 +207,14 @@ To do list:
         padding:10px;
         display: flex;
         flex-direction: row;
-        max-width: 1000px;
     }
 
     /*Change the product dividers to a column if the screen is small*/
     @media (max-width: 750px){
         #product-div{
             flex-wrap:wrap;
+            /*Center the items when they wrap*/
+            justify-content:center;
         }
     }
 
@@ -227,7 +228,8 @@ To do list:
         display:flex;
         flex-direction:column;
         align-items:center;
-        min-width: 200px;
+        min-width: 240px;
+        max-width: 400px;
     }
 
     #product-div > .level:hover {
@@ -288,9 +290,9 @@ To do list:
 
             <nav id="nav-bar">
                 <ul>
-                    <li><a class="nav-link" href="#features" class=header-links>Features</a></li>
                     <li><a class="nav-link" href="#product" class=header-links>Products and Services</a></li>
                     <li><a class="nav-link" href="#request" class=header-links>Request Information</a></li>
+                    <li><a class="nav-link" href="#features" class=header-links>Features</a></li>
                     <li><a class="nav-link" href="#about" class=header-links>About Us</a></li>
                 </ul>
             </nav>
@@ -306,15 +308,15 @@ To do list:
                     <h3>Startup Website</h3>
                     <p class="price">$150.00</p>
                     <p>3 Page Website</p>
-                    <p>Choose from multiple website templates</p>
-                    <p>Customized content based on your requirements</p>
+                    <p>Multiple website templates</p>
+                    <p>Customized content</p>
                 </div>
 
                 <div class="level" id="product2">
                     <h3>Professional Website</h3>
                     <p class="price">$799.99</p>
                     <p>10 Page Website</p>
-                    <p>Bespoke hand coded HTML and CSS</p>
+                    <p>Bespoke HTML and CSS</p>
                     <p>Custom content and banners</p>
                 </div>
 
@@ -322,8 +324,8 @@ To do list:
                     <h3>Elite Website</h3>
                     <p class="price">$1399.99</p>
                     <p>15 Page Website</p>
-                    <p>Bespoke hand coded HTML, CSS, and Javascript</p>
-                    <p>Customized content, banners, and interactive content</p>
+                    <p>Bespoke HTML, CSS, and JS</p>
+                    <p>Fully custom pages</p>
                 </div>
             </div>
         </section>
