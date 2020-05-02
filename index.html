@@ -169,7 +169,13 @@ To do list:
 
     nav ul {
         list-style-type:none; /*Remove bullets from the nav list*/
+    }
 
+    @media (max-width:1000px){
+        nav ul {
+            border: rgb(190, 189, 189) 1px solid; /*Add a border when the screen is small*/
+            box-shadow: 2px 2px 2px;
+        }
     }
 
     /*display navigation list items in one line rather than on separate lines*/
@@ -181,9 +187,10 @@ To do list:
 
     @media (max-width:1000px){
         nav li {
-            width:100%;
+            width:60vh;
             display:flex;
-            padding:0;
+            padding:0px;
+            padding: 1px;
         }
     }
 
